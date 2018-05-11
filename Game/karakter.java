@@ -71,9 +71,7 @@ public class karakter extends Actor
             }
         }
     }
-    public void gameover(){
-        
-    }
+   
     public void skorbertambah(){
        skor++;
        

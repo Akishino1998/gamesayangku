@@ -21,6 +21,15 @@ public class MyWorld extends World
         }else{
             jeda++;
         }
+        gameover();
+    }
+    public gameover selesai = new gameover();
+    public void gameover(){
+        //addObject(selesai, getWidth()/2, getHeight()/2);
+        if(karakter.getY()>=400){
+            addObject(selesai, getWidth()/2, getHeight()/2);
+            Greenfoot.stop();
+        }
     }
     public MyWorld()
     {    
@@ -60,7 +69,6 @@ public class MyWorld extends World
     gameover stop = new gameover();
     public void gameoverr(){
         if(karakter.getY() >= getHeight()){
-
             addObject(stop, getWidth()/2, getHeight()/2);
             Greenfoot.stop();
         }
