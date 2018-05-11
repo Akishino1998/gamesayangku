@@ -27,12 +27,11 @@ public class karakter extends Actor
         getWorld().showText(String.valueOf(skor),50,50);
         String key = Greenfoot.getKey();
         if(!Greenfoot.isKeyDown("right") && jatuh == false){
-            //tekan = false;
+        //tekan = false;
             if(!Greenfoot.isKeyDown("left") && jatuh == false){
-            tekan = false;
-           }
+                tekan = false;
+            }
         }
-        
     }   
     boolean tekan = false, jatuh = false;
     public void loncat(){ 
@@ -74,8 +73,6 @@ public class karakter extends Actor
    
     public void skorbertambah(){
        skor++;
-       
-       
     }
     
     

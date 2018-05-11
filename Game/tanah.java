@@ -17,10 +17,11 @@ public class tanah extends Actor
         GreenfootImage image = getImage();
         image.scale(image.getWidth() - 300, image.getHeight() - 70);
         setImage(image);
+        
     }
     public void act() 
     {
-         setLocation(getX(), getY()+1);
-    }    
+       setLocation(getX(), getY()+1);
+    }  
     
 }

@@ -14,6 +14,8 @@ public class MyWorld extends World
      * 
      */
     int jeda = 100;
+    boolean mulai = false;
+    tanah tanah = new tanah();
     public void act(){
         if(jeda==100){
             tanahbaru();
@@ -23,9 +25,9 @@ public class MyWorld extends World
         }
         gameover();
     }
+
     public gameover selesai = new gameover();
     public void gameover(){
-        //addObject(selesai, getWidth()/2, getHeight()/2);
         if(karakter.getY()>=400){
             addObject(selesai, getWidth()/2, getHeight()/2);
             Greenfoot.stop();
@@ -40,10 +42,6 @@ public class MyWorld extends World
         
         
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     karakter karakter = new karakter();
     
     private void prepare()
