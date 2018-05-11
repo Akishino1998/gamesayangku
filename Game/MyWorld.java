@@ -36,7 +36,7 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     karakter karakter = new karakter();
-    int setX = 100;
+    
     private void prepare()
     {
         
@@ -65,8 +65,53 @@ public class MyWorld extends World
             Greenfoot.stop();
         }
     }
+    int posisi = 100;
+    int angka_random = 0;
     public void tanahbaru(){
-        addObject(new tanah(), setX, 0);
+        angka_random = Greenfoot.getRandomNumber(2);
+        if(posisi == 100){
+            posisi = 200;
+            addObject(new tanah(), posisi, 0);
+        }
+        else if(posisi == 200){
+            if(angka_random == 0){
+                posisi = 100;
+                addObject(new tanah(), posisi, 0);
+            }else{
+                posisi = 300;
+                addObject(new tanah(), posisi, 0);
+            }
+        }else if(posisi == 300)
+        {
+            if(angka_random == 0){
+                posisi = 200;
+                addObject(new tanah(), posisi, 0);
+            }else{
+                posisi = 400;
+                addObject(new tanah(), posisi, 0);
+            }
+        }
+        else if(posisi == 400){
+            if(angka_random == 0){
+                posisi = 300;
+                addObject(new tanah(), posisi, 0);
+            }else{
+                posisi = 500;
+                addObject(new tanah(), posisi, 0);
+            }
+        }else if(posisi == 500){
+            if(angka_random == 0){
+                posisi = 400;
+                addObject(new tanah(), posisi, 0);
+            }else{
+                posisi = 600;
+                addObject(new tanah(), posisi, 0);
+            }
+        }else{
+            posisi = 500;
+            addObject(new tanah(), posisi, 0);
+        }
+        showText("Posisi = "+String.valueOf(posisi)+" Random = "+String.valueOf(angka_random),400,50);
     }
     
     
