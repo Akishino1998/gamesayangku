@@ -40,21 +40,21 @@ public class MyWorld extends World
     private void prepare()
     {
         
-        addObject(karakter,124,327);
+        addObject(karakter,100,327);
         tanah tanah = new tanah();
-        addObject(tanah,127,357);
+        addObject(tanah,100,357);
         tanah tanah2 = new tanah();
-        addObject(tanah2,213,298);
+        addObject(tanah2,200,298);
         tanah tanah3 = new tanah();
-        addObject(tanah3,327,206);
-        tanah3.setLocation(317,210);
-        tanah3.setLocation(312,215);
+        addObject(tanah3,300,206);
+        tanah3.setLocation(300,210);
+        tanah3.setLocation(300,215);
         tanah tanah4 = new tanah();
-        addObject(tanah4,174,172);
-        tanah4.setLocation(209,133);
+        addObject(tanah4,200,172);
+        tanah4.setLocation(200,133);
         tanah tanah5 = new tanah();
-        addObject(tanah5,229,89);
-        tanah5.setLocation(82,75);
+        addObject(tanah5,100,89);
+        tanah5.setLocation(100,75);
         
     }
     gameover stop = new gameover();

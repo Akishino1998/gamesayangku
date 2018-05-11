@@ -25,13 +25,21 @@ public class karakter extends Actor
         loncat();
         jatuh();
         getWorld().showText(String.valueOf(skor),50,50);
+        String key = Greenfoot.getKey();
+        if(!Greenfoot.isKeyDown("right") && jatuh == false){
+            //tekan = false;
+            if(!Greenfoot.isKeyDown("left") && jatuh == false){
+            tekan = false;
+           }
+        }
+        
     }   
-    boolean tekan = false;
+    boolean tekan = false, jatuh = false;
     public void loncat(){ 
         if(Greenfoot.isKeyDown("right")){
             if(tekan == false){
                 for(int i = 0; i < 10; i++){
-                    setLocation(getX()+8, getY()-10);
+                    setLocation(getX()+10, getY()-10);
                     Greenfoot.delay(1);
                     stat_tanah = true;
                 }
@@ -41,7 +49,7 @@ public class karakter extends Actor
         else if(Greenfoot.isKeyDown("left")){
             if(tekan == false){
                for(int i = 0; i < 10; i++){
-                    setLocation(getX()-8, getY()-10);
+                    setLocation(getX()-10, getY()-10);
                     Greenfoot.delay(1);
                     stat_tanah = true;
                 }
@@ -53,9 +61,10 @@ public class karakter extends Actor
     public void jatuh(){
         if(!isTouching(tanah.class)){
             setLocation(getX(), getY()+3);
+            jatuh = true;
         }
         else{
-            tekan=false;
+            jatuh = false;
             if(stat_tanah == true){
                 skorbertambah();
                 stat_tanah = false;
