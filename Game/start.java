@@ -20,7 +20,7 @@ public class start extends tombol
     public void tombol_klik(){
         getWorld().showText("bawbkldaludgboawd",50,50);
         if(Greenfoot.mouseClicked(start.class)==true){
-            getWorld().removeObject(this);
+            Greenfoot.setWorld(new MyWorld());
         }
     }
 }
