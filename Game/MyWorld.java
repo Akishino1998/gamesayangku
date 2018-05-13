@@ -14,8 +14,8 @@ public class MyWorld extends World
      * 
      */
     int jeda = 100;
-    boolean mulai = false;
-    tanah tanah = new tanah();
+    
+    
     public void act(){
         if(jeda==100){
             tanahbaru();
@@ -23,30 +23,18 @@ public class MyWorld extends World
         }else{
             jeda++;
         }
-        gameover();
-    }
-
-    public gameover selesai = new gameover();
-    public void gameover(){
-        if(karakter.getY()>=400){
-            addObject(selesai, getWidth()/2, getHeight()/2);
-            Greenfoot.stop();
-        }
-    }
+        
+    }    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
-        prepare();
-        gameoverr();
-        
+        prepare();       
         
     }
     karakter karakter = new karakter();
-    
     private void prepare()
     {
-        
         addObject(karakter,100,327);
         tanah tanah = new tanah();
         addObject(tanah,100,357);
@@ -62,14 +50,10 @@ public class MyWorld extends World
         tanah tanah5 = new tanah();
         addObject(tanah5,100,89);
         tanah5.setLocation(100,75);
-        
-    }
-    gameover stop = new gameover();
-    public void gameoverr(){
-        if(karakter.getY() >= getHeight()){
-            addObject(stop, getWidth()/2, getHeight()/2);
-            Greenfoot.stop();
-        }
+
+        score_board score_board = new score_board();
+        addObject(score_board,390,159);
+        score_board.setLocation(299,367);
     }
     int posisi = 100;
     int angka_random = 0;
@@ -117,7 +101,6 @@ public class MyWorld extends World
             posisi = 500;
             addObject(new tanah(), posisi, 0);
         }
-        showText("Posisi = "+String.valueOf(posisi)+" Random = "+String.valueOf(angka_random),400,50);
     }
     
     
